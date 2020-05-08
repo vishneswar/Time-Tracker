@@ -25,7 +25,7 @@ def timeTracker():
 							dicc['end_date'] = date
 							dicc['end_time'] = current_time
 							dicc['duration'] = str(dt.datetime.strptime(dicc['end_time'], '%H:%M:%S') - dt.datetime.strptime(dicc['start_time'], '%H:%M:%S'))
-							save_json(tracking, date_str)
+							save_json(tracking, date)
 							print(dicc['duration'])
 									
 		
@@ -48,7 +48,7 @@ def timeTracker():
 					dicc['start_time'] = current_time
 					dic['log'].append(dicc)
 					tracking['activities'].append(dic)
-				save_json(tracking, date_str)
+				save_json(tracking, date)
 			time.sleep(1)
 			
 	except KeyboardInterrupt:
